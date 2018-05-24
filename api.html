@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Payments Books API</title>
+    </head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center"><span class="text-primary">Payments Books API</span></h1>
+        </div>
+
+            <div class="panel panel-primary">
+
+                    <div class="panel-heading"><h3>Get All Books Details:</h3></div>
+
+                    <div class="panel-body">
+                              This is a <b>GET</b> route. find all books<br><br>
+                              key: none<br>
+                              values: none<br>
+                              Example:<br>
+                                <pre>   [
+                                            {
+                                                _id: "5b06a452fb6fc075763fc968",
+                                                id: 3,
+                                                name: "The Girl With The Dragon Tattoo",
+                                                type: "Crime",
+                                                price: 110,
+                                                discount: { memberDiscunt: 15,
+                                                            regularDiscunt: 10 }
+                                            },
+                                            {
+                                                _id: "5b069dd0fb6fc075763fc470",
+                                                id: 1,
+                                                name: "Harry Poter",
+                                                type: "Fantasy",
+                                                price: 150,
+                                                discount: { memberDiscunt: 10,
+                                                            regularDiscunt: 5 }
+                                            },
+                                            {
+                                                _id: "5b06a3c5fb6fc075763fc906",
+                                                id: 2,
+                                                name: "The Girl On The Train",
+                                                type: "Drama",
+                                                price: 225,
+                                                discount: { memberDiscunt: 8,
+                                                            regularDiscunt: 3 }
+                                            }
+                                        ]</pre>
+                    </div>
+
+                    <div class="panel-heading"><h3>Get Book By ID:</h3></div>
+
+                    <div class="panel-body">
+                              This is a <b>POST</b> route. Get book by ID<br><br>
+                              key: {id}<br>
+                              values: 2<br>
+                              Example:
+                              <pre>[
+                                        {
+                                            "_id": "5b06a3c5fb6fc075763fc906",
+                                            "id": 2,
+                                            "name": "The Girl On The Train",
+                                            "type": "Drama",
+                                            "price": 225,
+                                            "discount": { "memberDiscunt": 8,
+                                                          "regularDiscunt": 3 }
+                                        }
+                                    ]</pre>
+                    </div>
+
+                    <div class="panel-heading"><h3>Get books in the range of min max:</h3></div>
+
+                    <div class="panel-body">
+                              This is a <b>GET</b> route. Gets the books that are in the range of a given min and max price<br><br>
+                              key: none<br>
+                              values: 100,160<br>
+                              Example:<br>
+                              <pre> http://localhost:3000/getBooksByPrice/100/160
+                                    [
+                                        {
+                                            _id: "5b06a452fb6fc075763fc968",
+                                            id: 3,
+                                            name: "The Girl With The Dragon Tattoo",
+                                            type: "Crime",
+                                            price: 110,
+                                            discount: { memberDiscunt: 15,
+                                                        regularDiscunt: 10 }
+                                        },
+                                        {
+                                            _id: "5b069dd0fb6fc075763fc470",
+                                            id: 1,
+                                            name: "Harry Poter",
+                                            type: "Fantasy",
+                                            price: 150,
+                                            discount: { memberDiscunt: 10,
+                                                        regularDiscunt: 5 }
+                                        }
+                                    ]</pre>
+                    </div>
+
+          </div>
+    </div>
+</body>
+</html>
